@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     NSArray *desArr = @[@"变化数字不需要转换的:",
                         @"文本中数字需要转换:",
                         @"文本是可变字符串:",
@@ -36,7 +41,7 @@
     
     __weak typeof(self) weakSelf = self;
     xSOneLabel.completionBlock = ^{
-      
+        
         weakSelf.view.backgroundColor = [UIColor cyanColor];
     };
     
@@ -84,7 +89,7 @@
     };
     [XSFourthLabel scrollFrom:0 to:154333234 withDuration:2.0];
     [self.view addSubview:XSFourthLabel];
-    
+
 }
 
 - (IBAction)dismissView:(id)sender {
